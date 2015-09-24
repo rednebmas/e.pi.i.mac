@@ -19,6 +19,7 @@ typedef struct DoublePoint
     DoublePoint *pointGrid;
     DoublePoint *z0;
     short int *iterationCount;
+    int *invalid;
     WindowEdges windowEdges;
     WindowSize resolution;
 }
@@ -46,6 +47,7 @@ typedef struct DoublePoint
     pointGrid = malloc(sizeof(DoublePoint) * resolution.width * resolution.height);
     z0 = malloc(sizeof(DoublePoint) * resolution.width * resolution.height);
     iterationCount = malloc(sizeof(short int) * resolution.width * resolution.height);
+    invalid = malloc(sizeof(int) * resolution.width * resolution.height);
     
     double realIncrement = fabs(windowEdges.right - windowEdges.left) / resolution.width;
     double imaginaryIncrement = fabs(windowEdges.top - windowEdges.bottom) / resolution.height;
@@ -93,26 +95,9 @@ typedef struct DoublePoint
 
 
 - (void) run
-// appears to be displaying correctly
-//{
-//    double max = 4;
-//    double min = 0;
-//    
-//    for (int y = 0; y < resolution.height; y++)
-//    {
-//        for (int x = 0; x < resolution.width; x++)
-//        {
-//            int pos = x + y * resolution.width;
-//            DoublePoint currentPoint = pointGrid[pos];
-//            DoublePoint newPt;
-//            double newVal = sqrt(currentPoint.a * currentPoint.a + currentPoint.b * currentPoint.b);
-//            
-//            
-//            iterationCount[pos] = 1 - newVal * (255 / max);
-//        }
-//    }
-//}
 {
+    NSDate *methodStart = [NSDate date];
+
     int pos;
     for (int i = 0; i < _iterations; i++)
     {
@@ -121,28 +106,35 @@ typedef struct DoublePoint
             for (int x = 0; x < resolution.width; x++)
             {
                 pos = x + y * resolution.width;
-                DoublePoint currentPoint = pointGrid[pos];
+                if (invalid[pos])
+                    continue;
                 
-#warning Shouldn't this be plus/minus 2?
+                DoublePoint *currentPoint = &pointGrid[pos];
+                
 #warning In js created bool array to see if current point is aready outside
-//                if (fabs(currentPoint.a) < 2 && fabs(currentPoint.b) < 2)
-                if (currentPoint.a < 2 && currentPoint.b < 2)
+                if (currentPoint->a < 2 && currentPoint->b < 2)
                 {
                     DoublePoint newPoint;
-                    newPoint.a = (currentPoint.a * currentPoint.a)
-                    - (currentPoint.b * currentPoint.b)
+                    newPoint.a = (currentPoint->a * currentPoint->a)
+                    - (currentPoint->b * currentPoint->b)
                     + z0[pos].a;
-                    newPoint.b = 2 * currentPoint.b * currentPoint.a
+                    newPoint.b = 2 * currentPoint->b * currentPoint->a
                     + z0[pos].b;
                     
                     pointGrid[pos] = newPoint;
                     iterationCount[pos] += 1;
-                    
-                    NSAssert(iterationCount[pos] >= 0 && iterationCount[pos] < _iterations + 1, @"");
+                }
+                else
+                {
+                    invalid[pos] = 255;
                 }
             }
         }
     }
+    
+    NSDate *methodFinish = [NSDate date];
+    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
+    NSLog(@"Fractal iteration execution time = %f", executionTime);
 }
 
 - (RGBColor) rgbAtX:(int)x Y:(int)y

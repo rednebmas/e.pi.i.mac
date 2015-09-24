@@ -13,8 +13,8 @@ float lastValue = 0.0;
 
 @implementation ViewController
 UInt8 *data;
-short int width = 440;
-short int height = 400;
+short int width = 800 * 2;
+short int height = 800 * 2;
 Fractal *fractal;
 
 - (void)viewDidLoad {
@@ -99,10 +99,7 @@ Fractal *fractal;
     NSImage *im = [[NSImage alloc] initWithCGImage:image size:(NSSize){ width, height}];
     
     _imageView.image = im;
-    
-    NSDate *methodFinish = [NSDate date];
-    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
-    NSLog(@"executionTime = %f", executionTime);
+
 }
 
 - (void)setRepresentedObject:(id)representedObject {
