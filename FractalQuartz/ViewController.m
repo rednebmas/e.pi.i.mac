@@ -7,39 +7,50 @@
 //
 
 #import "ViewController.h"
+#import "Fractal.h"
+
+float lastValue = 0.0;
 
 @implementation ViewController
+UInt8 *data;
+short int width = 400;
+short int height = 400;
+Fractal *fractal;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Create a raw buffer to hold pixel data which we will fill algorithmically
-    NSInteger width = 100;
-    NSInteger height = 100;
-    NSInteger dataLength = width * height * 4;
-    UInt8 *data = (UInt8*)malloc(dataLength * sizeof(UInt8));
+    /*** FRACTAL ***/
+    WindowEdges windowEdges;
+    windowEdges.left = -2.5;
+    windowEdges.right = 1.5;
+    windowEdges.top = 2.0;
+    windowEdges.bottom = -2.1;
     
-    //Fill pixel buffer with color data
-    for (int j=0; j<height; j++) {
-        for (int i=0; i<width; i++) {
-            
-            //Here I'm just filling every pixel with red
-            float red   = 1.0f;
-            float green = 0.0f;
-            float blue  = 0.0f;
-            float alpha = 1.0f;
-            
-            int index = 4*(i+j*width);
-            data[index]  =255*red;
-            data[++index]=255*green;
-            data[++index]=255*blue;
-            data[++index]=255*alpha;
-            
-        }
-    }
+    WindowSize resolution;
+    resolution.width = width;
+    resolution.height = height;
+    
+    fractal = [[Fractal alloc] initWithWindowEdges:windowEdges outputResolution:resolution];
+    [fractal run];
+    /***************/
+    
+    NSInteger dataLength = width * height * 4;
+    data = (UInt8*)malloc(dataLength * sizeof(UInt8));
+    [self rotateColor];
+//    [NSTimer scheduledTimerWithTimeInterval:1.0/60.0 target:self selector:@selector(rotateColor) userInfo:nil repeats:YES];
+}
+
+- (void) rotateColor
+{
+    NSDate *methodStart = [NSDate date];
+    
+    //Create a raw buffer to hold pixel data which we will fill algorithmically
+    
+
     
     // Create a CGImage with the pixel data
-    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, dataLength, NULL);
+    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, width * height * 4, NULL);
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
     CGImageRef image = CGImageCreate(width, height, 8, 32, width * 4, colorspace, kCGBitmapByteOrder32Big | kCGImageAlphaPremultipliedLast,
                                      
@@ -50,34 +61,30 @@
     CGDataProviderRelease(provider);
     // Don't forget to free(data) when you are done with the CGImage
     
-    NSImage *im = [[NSImage alloc] initWithCGImage:image size:(NSSize){ 100, 100}];
+    NSImage *im = [[NSImage alloc] initWithCGImage:image size:(NSSize){ width, height}];
     
-//    [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(rotateColor) userInfo:nil repeats:YES];
     
-    for (int j=0; j<height; j++) {
-        for (int i=0; i<width; i++) {
+       //Fill pixel buffer with color data
+    for (int i=0; i<height; i++) {
+        for (int j=0; j<width; j++) {
+            RGBColor color = [fractal rgbAtX:j Y:i];
             
-            //Here I'm just filling every pixel with red
-            float red   = 0.0f;
-            float green = 1.0f;
-            float blue  = 0.0f;
-            float alpha = 1.0f;
-            
-            int index = 4*(i+j*width);
-            data[index]  =255*red;
-            data[++index]=255*green;
-            data[++index]=255*blue;
-            data[++index]=255*alpha;
-            
+            int index = 4*(j+i*width);
+            data[index]   = color.red;
+            data[++index] = color.green;
+            data[++index] = color.blue;
+            data[++index] = 255;
         }
-    }
+    } 
+    
     
     
     _imageView.image = im;
     
     
-    return;
-
+    NSDate *methodFinish = [NSDate date];
+    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
+    NSLog(@"executionTime = %f", executionTime);
 }
 
 - (void)setRepresentedObject:(id)representedObject {

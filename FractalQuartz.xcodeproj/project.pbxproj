@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225690EE1BB3B97400BF032B /* Fractal.m in Sources */ = {isa = PBXBuildFile; fileRef = 225690ED1BB3B97400BF032B /* Fractal.m */; settings = {ASSET_TAGS = (); }; };
 		22B658391B5F7A8500BD47D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B658381B5F7A8500BD47D7 /* AppDelegate.m */; };
 		22B6583B1B5F7A8500BD47D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B6583A1B5F7A8500BD47D7 /* main.m */; };
 		22B6583E1B5F7A8500BD47D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B6583D1B5F7A8500BD47D7 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		225690EC1BB3B97400BF032B /* Fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fractal.h; sourceTree = "<group>"; };
+		225690ED1BB3B97400BF032B /* Fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fractal.m; sourceTree = "<group>"; };
 		22B658321B5F7A8500BD47D7 /* FractalQuartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalQuartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B658361B5F7A8500BD47D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B658371B5F7A8500BD47D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 			children = (
 				22B658371B5F7A8500BD47D7 /* AppDelegate.h */,
 				22B658381B5F7A8500BD47D7 /* AppDelegate.m */,
+				225690EC1BB3B97400BF032B /* Fractal.h */,
+				225690ED1BB3B97400BF032B /* Fractal.m */,
 				22B6583C1B5F7A8500BD47D7 /* ViewController.h */,
 				22B6583D1B5F7A8500BD47D7 /* ViewController.m */,
 				22B6583F1B5F7A8500BD47D7 /* Images.xcassets */,
@@ -224,6 +229,7 @@
 				22B6583E1B5F7A8500BD47D7 /* ViewController.m in Sources */,
 				22B6583B1B5F7A8500BD47D7 /* main.m in Sources */,
 				22B658391B5F7A8500BD47D7 /* AppDelegate.m in Sources */,
+				225690EE1BB3B97400BF032B /* Fractal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +419,7 @@
 				22B658541B5F7A8500BD47D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22B658551B5F7A8500BD47D7 /* Build configuration list for PBXNativeTarget "FractalQuartzTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +428,7 @@
 				22B658571B5F7A8500BD47D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
