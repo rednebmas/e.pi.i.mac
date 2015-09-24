@@ -13,6 +13,7 @@
 		22B658401B5F7A8500BD47D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B6583F1B5F7A8500BD47D7 /* Images.xcassets */; };
 		22B658431B5F7A8500BD47D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B658411B5F7A8500BD47D7 /* Main.storyboard */; };
 		22B6584F1B5F7A8500BD47D7 /* FractalQuartzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B6584E1B5F7A8500BD47D7 /* FractalQuartzTests.m */; };
+		22B6585A1B5F7A9C00BD47D7 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B658591B5F7A9C00BD47D7 /* MyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 		22B658481B5F7A8500BD47D7 /* FractalQuartzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalQuartzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B6584D1B5F7A8500BD47D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B6584E1B5F7A8500BD47D7 /* FractalQuartzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FractalQuartzTests.m; sourceTree = "<group>"; };
+		22B658581B5F7A9C00BD47D7 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		22B658591B5F7A9C00BD47D7 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				22B6583F1B5F7A8500BD47D7 /* Images.xcassets */,
 				22B658411B5F7A8500BD47D7 /* Main.storyboard */,
 				22B658351B5F7A8500BD47D7 /* Supporting Files */,
+				22B658581B5F7A9C00BD47D7 /* MyView.h */,
+				22B658591B5F7A9C00BD47D7 /* MyView.m */,
 			);
 			path = FractalQuartz;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B6585A1B5F7A9C00BD47D7 /* MyView.m in Sources */,
 				22B6583E1B5F7A8500BD47D7 /* ViewController.m in Sources */,
 				22B6583B1B5F7A8500BD47D7 /* main.m in Sources */,
 				22B658391B5F7A8500BD47D7 /* AppDelegate.m in Sources */,

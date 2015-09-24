@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MyView.h
 //  FractalQuartz
 //
 //  Created by Sam Bender on 7/22/15.
@@ -8,9 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
-
-@property (strong) IBOutlet NSImageView *imageView;
+@interface MyView : NSView
 
 @end
-
