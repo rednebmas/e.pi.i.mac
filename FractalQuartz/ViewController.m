@@ -13,7 +13,7 @@ float lastValue = 0.0;
 
 @implementation ViewController
 UInt8 *data;
-short int width = 400;
+short int width = 440;
 short int height = 400;
 Fractal *fractal;
 
@@ -45,9 +45,44 @@ Fractal *fractal;
 {
     NSDate *methodStart = [NSDate date];
     
-    //Create a raw buffer to hold pixel data which we will fill algorithmically
+    //Fill pixel buffer with color data
+    NSMutableSet *set = [[NSMutableSet alloc] initWithCapacity:255];
     
-
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            RGBColor color = [fractal rgbAtX:x Y:y];
+            
+            
+            [set addObject:[NSNumber numberWithInt:color.red]];
+            
+            int index = 4*(x+y*width);
+            
+            // produces correct linear gradient
+//            float v = (float)x / (float)width;
+//            color.red = v * 255;
+//            color.green = v * 255;
+//            color.blue = v * 255;
+            
+            if (color.red > 10)
+            {
+//                NSLog(@"%d", color.red);
+            }
+            
+            if (x == y)
+            {
+                color.red = 200;
+                color.blue = 200;
+            }
+            
+            
+            data[index]   = color.red;
+            data[++index] = color.green;
+            data[++index] = color.blue;
+            data[++index] = 255;
+        }
+    }
+    
+    NSLog(@"%lu different colors used", (unsigned long)set.count);
     
     // Create a CGImage with the pixel data
     CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, width * height * 4, NULL);
@@ -63,24 +98,7 @@ Fractal *fractal;
     
     NSImage *im = [[NSImage alloc] initWithCGImage:image size:(NSSize){ width, height}];
     
-    
-       //Fill pixel buffer with color data
-    for (int i=0; i<height; i++) {
-        for (int j=0; j<width; j++) {
-            RGBColor color = [fractal rgbAtX:j Y:i];
-            
-            int index = 4*(j+i*width);
-            data[index]   = color.red;
-            data[++index] = color.green;
-            data[++index] = color.blue;
-            data[++index] = 255;
-        }
-    } 
-    
-    
-    
     _imageView.image = im;
-    
     
     NSDate *methodFinish = [NSDate date];
     NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];

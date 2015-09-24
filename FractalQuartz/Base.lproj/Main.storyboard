@@ -673,7 +673,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mMZ-Wb-4mT">
-                                <rect key="frame" x="126" y="9" width="400" height="400"/>
+                                <rect key="frame" x="106" y="9" width="440" height="400"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="rOg-bi-Xmm"/>
                             </imageView>
                         </subviews>
