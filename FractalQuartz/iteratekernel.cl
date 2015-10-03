@@ -17,9 +17,9 @@ kernel void iterate(global double* input, global double* inputZ0, global ushort*
     float dist = sqrt((float)inner);
     
     float exp = 2.83;
-    float scaled = pow(dist, exp);
+    float scaled = pow(dist, 10);
     ushort au = (ushort)a;
-    output[i] = (ushort)(((float)(i % 1600) / 1600) * 255);
+    output[i] = 255-scaled;
     return;
     
     
