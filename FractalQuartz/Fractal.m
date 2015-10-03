@@ -19,7 +19,6 @@ typedef struct DoublePoint
     DoublePoint *pointGrid;
     DoublePoint *z0;
     short int *iterationCount;
-    int *invalid;
     WindowEdges windowEdges;
     WindowSize resolution;
 }
@@ -47,7 +46,6 @@ typedef struct DoublePoint
     pointGrid = malloc(sizeof(DoublePoint) * resolution.width * resolution.height);
     z0 = malloc(sizeof(DoublePoint) * resolution.width * resolution.height);
     iterationCount = malloc(sizeof(short int) * resolution.width * resolution.height);
-    invalid = malloc(sizeof(int) * resolution.width * resolution.height);
     
     double realIncrement = fabs(windowEdges.right - windowEdges.left) / resolution.width;
     double imaginaryIncrement = fabs(windowEdges.top - windowEdges.bottom) / resolution.height;
@@ -99,35 +97,27 @@ typedef struct DoublePoint
     NSDate *methodStart = [NSDate date];
 
     int pos;
-    for (int i = 0; i < _iterations; i++)
+    DoublePoint newPoint;
+    for (int y = 0; y < resolution.height; y++)
     {
-        for (int y = 0; y < resolution.height; y++)
+        for (int x = 0; x < resolution.width; x++)
         {
-            for (int x = 0; x < resolution.width; x++)
+            pos = x + y * resolution.width;
+            DoublePoint *currentPoint = &pointGrid[pos];
+            
+            for (int i = 0; i < _iterations; i++)
             {
-                pos = x + y * resolution.width;
-                if (invalid[pos])
-                    continue;
+                if (currentPoint->a > 2 || currentPoint->b > 2)
+                    break;
                 
-                DoublePoint *currentPoint = &pointGrid[pos];
+                newPoint.a = (currentPoint->a * currentPoint->a)
+                - (currentPoint->b * currentPoint->b)
+                + z0[pos].a;
+                newPoint.b = 2 * currentPoint->b * currentPoint->a
+                + z0[pos].b;
                 
-#warning In js created bool array to see if current point is aready outside
-                if (currentPoint->a < 2 && currentPoint->b < 2)
-                {
-                    DoublePoint newPoint;
-                    newPoint.a = (currentPoint->a * currentPoint->a)
-                    - (currentPoint->b * currentPoint->b)
-                    + z0[pos].a;
-                    newPoint.b = 2 * currentPoint->b * currentPoint->a
-                    + z0[pos].b;
-                    
-                    pointGrid[pos] = newPoint;
-                    iterationCount[pos] += 1;
-                }
-                else
-                {
-                    invalid[pos] = 255;
-                }
+                pointGrid[pos] = newPoint;
+                iterationCount[pos] += 1;
             }
         }
     }
@@ -142,13 +132,8 @@ typedef struct DoublePoint
     int pos = x + y * resolution.width;
     
     RGBColor color;
-    // produces correct linear gradient
-//    float v = (float)x / (float)resolution.width;
-//    color.red = v * 255;
-//    color.green = v * 255;
-//    color.blue = v * 255;
     
-    // iteration count values are between 0 and 255
+    // iteration count values are between 0 and 255 for the moment
     color.red = iterationCount[pos];
     color.green = iterationCount[pos];
     color.blue = iterationCount[pos];
