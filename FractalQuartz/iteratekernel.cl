@@ -7,8 +7,8 @@ kernel void iterate(global double* input, global double* inputZ0, global ushort*
     double a = input[i * 2];
     double b = input[i * 2 + 1];
     
-    double a0 = inputZ0[i * 2];
-    double b0 = inputZ0[i * 2 + 1];
+    double a0 = input[i * 2];
+    double b0 = input[i * 2 + 1];
     
     double newA, newB;
     
@@ -18,7 +18,8 @@ kernel void iterate(global double* input, global double* inputZ0, global ushort*
     
     float exp = 2.83;
     float scaled = pow(dist, exp);
-    output[i] = 1-(ushort)scaled;
+    ushort au = (ushort)a;
+    output[i] = (ushort)(((float)(i % 1600) / 1600) * 255);
     return;
     
     
