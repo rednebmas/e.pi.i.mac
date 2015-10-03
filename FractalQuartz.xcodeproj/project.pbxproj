@@ -15,6 +15,7 @@
 		22B658431B5F7A8500BD47D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B658411B5F7A8500BD47D7 /* Main.storyboard */; };
 		22B6584F1B5F7A8500BD47D7 /* FractalQuartzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B6584E1B5F7A8500BD47D7 /* FractalQuartzTests.m */; };
 		22B6585A1B5F7A9C00BD47D7 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B658591B5F7A9C00BD47D7 /* MyView.m */; };
+		22EE24A11BBFC6B5007C409F /* iteratekernel.cl in Sources */ = {isa = PBXBuildFile; fileRef = 22EE24A01BBFC6B5007C409F /* iteratekernel.cl */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		22B6584E1B5F7A8500BD47D7 /* FractalQuartzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FractalQuartzTests.m; sourceTree = "<group>"; };
 		22B658581B5F7A9C00BD47D7 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
 		22B658591B5F7A9C00BD47D7 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		22EE24A01BBFC6B5007C409F /* iteratekernel.cl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.opencl; path = iteratekernel.cl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				22B658381B5F7A8500BD47D7 /* AppDelegate.m */,
 				225690EC1BB3B97400BF032B /* Fractal.h */,
 				225690ED1BB3B97400BF032B /* Fractal.m */,
+				22EE24A01BBFC6B5007C409F /* iteratekernel.cl */,
 				22B6583C1B5F7A8500BD47D7 /* ViewController.h */,
 				22B6583D1B5F7A8500BD47D7 /* ViewController.m */,
 				22B6583F1B5F7A8500BD47D7 /* Images.xcassets */,
@@ -229,6 +232,7 @@
 				22B6583E1B5F7A8500BD47D7 /* ViewController.m in Sources */,
 				22B6583B1B5F7A8500BD47D7 /* main.m in Sources */,
 				22B658391B5F7A8500BD47D7 /* AppDelegate.m in Sources */,
+				22EE24A11BBFC6B5007C409F /* iteratekernel.cl in Sources */,
 				225690EE1BB3B97400BF032B /* Fractal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,6 +48,9 @@ Fractal *fractal;
         for (int x = 0; x < width; x++) {
             RGBColor color = [fractal rgbAtX:x Y:y];
             
+//            if (color.red > 255)
+//                printf("color not valid");
+            
             int index = 4*(x+y*width);
             
             data[index]   = color.red;
