@@ -94,7 +94,7 @@ typedef struct DoublePoint
 
 - (void) run
 {
-    NSDate *methodStart = [NSDate date];
+    clock_t start = clock();
 
     int pos;
     DoublePoint newPoint;
@@ -122,10 +122,9 @@ typedef struct DoublePoint
         }
     }
     
-    NSDate *methodFinish = [NSDate date];
-    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
-    NSLog(@"Fractal iteration execution time = %f", executionTime);
-}
+    clock_t diff = clock() - start;
+    int msec = diff * 1000 / CLOCKS_PER_SEC;
+    printf("Time taken %d seconds %d milliseconds", msec/1000, msec%1000);}
 
 - (RGBColor) rgbAtX:(int)x Y:(int)y
 {
