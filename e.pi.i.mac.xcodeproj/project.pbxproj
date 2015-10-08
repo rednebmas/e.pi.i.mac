@@ -67,8 +67,8 @@
 		22B658291B5F7A8500BD47D7 = {
 			isa = PBXGroup;
 			children = (
-				22B658341B5F7A8500BD47D7 /* FractalQuartz */,
-				22B6584B1B5F7A8500BD47D7 /* FractalQuartzTests */,
+				22B658341B5F7A8500BD47D7 /* e.pi.i.mac */,
+				22B6584B1B5F7A8500BD47D7 /* e.pi.i.macTests */,
 				22B658331B5F7A8500BD47D7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,7 +82,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		22B658341B5F7A8500BD47D7 /* FractalQuartz */ = {
+		22B658341B5F7A8500BD47D7 /* e.pi.i.mac */ = {
 			isa = PBXGroup;
 			children = (
 				22B658371B5F7A8500BD47D7 /* AppDelegate.h */,
@@ -97,7 +97,7 @@
 				22B658581B5F7A9C00BD47D7 /* MyView.h */,
 				22B658591B5F7A9C00BD47D7 /* MyView.m */,
 			);
-			path = FractalQuartz;
+			path = e.pi.i.mac;
 			sourceTree = "<group>";
 		};
 		22B658351B5F7A8500BD47D7 /* Supporting Files */ = {
@@ -109,13 +109,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		22B6584B1B5F7A8500BD47D7 /* FractalQuartzTests */ = {
+		22B6584B1B5F7A8500BD47D7 /* e.pi.i.macTests */ = {
 			isa = PBXGroup;
 			children = (
 				22B6584E1B5F7A8500BD47D7 /* FractalQuartzTests.m */,
 				22B6584C1B5F7A8500BD47D7 /* Supporting Files */,
 			);
-			path = FractalQuartzTests;
+			path = e.pi.i.macTests;
 			sourceTree = "<group>";
 		};
 		22B6584C1B5F7A8500BD47D7 /* Supporting Files */ = {
@@ -347,7 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FractalQuartz/Info.plist;
+				INFOPLIST_FILE = e.pi.i.mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = e.pi.i.mac;
 			};
@@ -358,7 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FractalQuartz/Info.plist;
+				INFOPLIST_FILE = e.pi.i.mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = e.pi.i.mac;
 			};
@@ -377,7 +377,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FractalQuartzTests/Info.plist;
+				INFOPLIST_FILE = e.pi.i.macTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = e.pi.i.mac;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/e.pi.i.mac.app/Contents/MacOS/e.pi.i.mac";
@@ -393,7 +393,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FractalQuartzTests/Info.plist;
+				INFOPLIST_FILE = e.pi.i.macTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = e.pi.i.mac;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/e.pi.i.mac.app/Contents/MacOS/e.pi.i.mac";
