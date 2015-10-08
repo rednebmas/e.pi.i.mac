@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		225690EC1BB3B97400BF032B /* Fractal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fractal.h; sourceTree = "<group>"; };
 		225690ED1BB3B97400BF032B /* Fractal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fractal.m; sourceTree = "<group>"; };
-		22B658321B5F7A8500BD47D7 /* FractalQuartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalQuartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B658321B5F7A8500BD47D7 /* e.pi.i.mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = e.pi.i.mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B658361B5F7A8500BD47D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B658371B5F7A8500BD47D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		22B658381B5F7A8500BD47D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,7 +39,7 @@
 		22B6583D1B5F7A8500BD47D7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		22B6583F1B5F7A8500BD47D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22B658421B5F7A8500BD47D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		22B658481B5F7A8500BD47D7 /* FractalQuartzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalQuartzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B658481B5F7A8500BD47D7 /* e.pi.i.mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = e.pi.i.mac.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B6584D1B5F7A8500BD47D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B6584E1B5F7A8500BD47D7 /* FractalQuartzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FractalQuartzTests.m; sourceTree = "<group>"; };
 		22B658581B5F7A9C00BD47D7 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 		22B658331B5F7A8500BD47D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22B658321B5F7A8500BD47D7 /* FractalQuartz.app */,
-				22B658481B5F7A8500BD47D7 /* FractalQuartzTests.xctest */,
+				22B658321B5F7A8500BD47D7 /* e.pi.i.mac.app */,
+				22B658481B5F7A8500BD47D7 /* e.pi.i.mac.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,9 +129,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22B658311B5F7A8500BD47D7 /* FractalQuartz */ = {
+		22B658311B5F7A8500BD47D7 /* e.pi.i.mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22B658521B5F7A8500BD47D7 /* Build configuration list for PBXNativeTarget "FractalQuartz" */;
+			buildConfigurationList = 22B658521B5F7A8500BD47D7 /* Build configuration list for PBXNativeTarget "e.pi.i.mac" */;
 			buildPhases = (
 				22B6582E1B5F7A8500BD47D7 /* Sources */,
 				22B6582F1B5F7A8500BD47D7 /* Frameworks */,
@@ -141,14 +141,14 @@
 			);
 			dependencies = (
 			);
-			name = FractalQuartz;
+			name = e.pi.i.mac;
 			productName = FractalQuartz;
-			productReference = 22B658321B5F7A8500BD47D7 /* FractalQuartz.app */;
+			productReference = 22B658321B5F7A8500BD47D7 /* e.pi.i.mac.app */;
 			productType = "com.apple.product-type.application";
 		};
-		22B658471B5F7A8500BD47D7 /* FractalQuartzTests */ = {
+		22B658471B5F7A8500BD47D7 /* e.pi.i.macTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22B658551B5F7A8500BD47D7 /* Build configuration list for PBXNativeTarget "FractalQuartzTests" */;
+			buildConfigurationList = 22B658551B5F7A8500BD47D7 /* Build configuration list for PBXNativeTarget "e.pi.i.macTests" */;
 			buildPhases = (
 				22B658441B5F7A8500BD47D7 /* Sources */,
 				22B658451B5F7A8500BD47D7 /* Frameworks */,
@@ -159,9 +159,9 @@
 			dependencies = (
 				22B6584A1B5F7A8500BD47D7 /* PBXTargetDependency */,
 			);
-			name = FractalQuartzTests;
+			name = e.pi.i.macTests;
 			productName = FractalQuartzTests;
-			productReference = 22B658481B5F7A8500BD47D7 /* FractalQuartzTests.xctest */;
+			productReference = 22B658481B5F7A8500BD47D7 /* e.pi.i.mac.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +182,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 22B6582D1B5F7A8500BD47D7 /* Build configuration list for PBXProject "FractalQuartz" */;
+			buildConfigurationList = 22B6582D1B5F7A8500BD47D7 /* Build configuration list for PBXProject "e.pi.i.mac" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -195,8 +195,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22B658311B5F7A8500BD47D7 /* FractalQuartz */,
-				22B658471B5F7A8500BD47D7 /* FractalQuartzTests */,
+				22B658311B5F7A8500BD47D7 /* e.pi.i.mac */,
+				22B658471B5F7A8500BD47D7 /* e.pi.i.macTests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,7 +246,7 @@
 /* Begin PBXTargetDependency section */
 		22B6584A1B5F7A8500BD47D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 22B658311B5F7A8500BD47D7 /* FractalQuartz */;
+			target = 22B658311B5F7A8500BD47D7 /* e.pi.i.mac */;
 			targetProxy = 22B658491B5F7A8500BD47D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -349,7 +349,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FractalQuartz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = e.pi.i.mac;
 			};
 			name = Debug;
 		};
@@ -360,7 +360,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FractalQuartz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = e.pi.i.mac;
 			};
 			name = Release;
 		};
@@ -379,8 +379,8 @@
 				);
 				INFOPLIST_FILE = FractalQuartzTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FractalQuartz.app/Contents/MacOS/FractalQuartz";
+				PRODUCT_NAME = e.pi.i.mac;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/e.pi.i.mac.app/Contents/MacOS/e.pi.i.mac";
 			};
 			name = Debug;
 		};
@@ -395,15 +395,15 @@
 				);
 				INFOPLIST_FILE = FractalQuartzTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FractalQuartz.app/Contents/MacOS/FractalQuartz";
+				PRODUCT_NAME = e.pi.i.mac;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/e.pi.i.mac.app/Contents/MacOS/e.pi.i.mac";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22B6582D1B5F7A8500BD47D7 /* Build configuration list for PBXProject "FractalQuartz" */ = {
+		22B6582D1B5F7A8500BD47D7 /* Build configuration list for PBXProject "e.pi.i.mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22B658501B5F7A8500BD47D7 /* Debug */,
@@ -412,7 +412,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22B658521B5F7A8500BD47D7 /* Build configuration list for PBXNativeTarget "FractalQuartz" */ = {
+		22B658521B5F7A8500BD47D7 /* Build configuration list for PBXNativeTarget "e.pi.i.mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22B658531B5F7A8500BD47D7 /* Debug */,
@@ -421,7 +421,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22B658551B5F7A8500BD47D7 /* Build configuration list for PBXNativeTarget "FractalQuartzTests" */ = {
+		22B658551B5F7A8500BD47D7 /* Build configuration list for PBXNativeTarget "e.pi.i.macTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22B658561B5F7A8500BD47D7 /* Debug */,

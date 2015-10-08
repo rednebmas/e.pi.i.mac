@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:FractalQuartz.xcodeproj">
+      location = "self:/Users/sam/code/objective-c/e.pi.i.mac/e.pi.i.mac.xcodeproj">
    </FileRef>
 </Workspace>
